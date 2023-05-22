@@ -1,29 +1,22 @@
-import { StyleSheet,SafeAreaView, StatusBar, Platform } from 'react-native';
-import Routes from './src/routes';
+import  React from 'react'
+import { StatusBar, LogBox} from 'react-native';
+import 'react-native-gesture-handler';
+import Routes from './src/routes/routes';
+import { NavigationContainer } from '@react-navigation/native';
 
-
+LogBox.ignoreAllLogs();
 
 export default function App() {
   return (
 
-    <SafeAreaView style={styles.container}>
-
+    <NavigationContainer>
       <StatusBar backgroundColor="black"/>
 
         <Routes />
 
-
-    </SafeAreaView>
-
+    </NavigationContainer>
 
 
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  }
-
-
-});

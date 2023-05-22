@@ -1,45 +1,52 @@
 import React from 'react'
-import { View, Text, Image, TextInput, StatusBar} from 'react-native'
-
-import Logo from '../../assets/logo.png'
-import { styles } from './styles'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-
+import { Platform } from 'react-native'
+import { Container, ImageLogo, InputTexto, SubmitButton, SubmitText, CreateAccoutView, CreateAccountButton, CreateNewAccount, Background, Form, TextForm} from './styles'
+import { useNavigation } from '@react-navigation/native';
 
 export default function Login() {
+    const navigation = useNavigation();
+
     return (
-        <View style={styles.container}>
-            <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />
-            <Image
-                source={Logo}
-                style={styles.logo}
-            />
 
-            <View style={ styles.formulario}>
-                <TextInput
-                    style={styles.input}
-                    placeholder='Nome de Usuario'
-                />
- 
-                <TextInput
-                    style={styles.input}
-                    placeholder='Senha'
+        <Background>
+            <Container
+                behavior={Platform.OS == 'ios' ? 'padding' : ''}
+                enabled
+            >
+
+
+                <ImageLogo
+                    source={require('../../assets/logo.png')}
                 />
 
-                <TouchableOpacity style={styles.botaoEntrar}>
-                    <Text style={{ color: '#FFF'}}>Entrar</Text>
-                </TouchableOpacity>
+                <Form>
 
-                <View style={styles.ultimoTexto}>
-                <Text style={{ color: '#FFF'}}> Nao possui uma conta ?</Text>
+                    <TextForm>Nome do  usuario</TextForm>
+                    <InputTexto
+                        placeholder='Nome de Usuario'
+                    />
 
-                <TouchableOpacity>
-                    <Text style={{ color: '#FF0000'}}> Criar nova conta</Text>
-                </TouchableOpacity>
-                </View>
+                    <TextForm>Senha</TextForm>
+                    <InputTexto
+                        placeholder='Senha'
+                    />
+                </Form>
 
-            </View>
-        </View>
+                    <SubmitButton>
+                        <SubmitText>Acessar</SubmitText>
+                    </SubmitButton>
+
+                <CreateAccoutView>
+                    <SubmitText> Nao possui uma conta ?</SubmitText>
+
+                    <CreateAccountButton onPress={() => navigation.navigate('TypeAccount')}>
+                        <CreateNewAccount>  criar uma conta</CreateNewAccount>
+                    </CreateAccountButton>
+                </CreateAccoutView>
+
+
+            </Container>
+        </Background>
     )
 }
 
