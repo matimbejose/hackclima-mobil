@@ -1,10 +1,13 @@
 import { Platform } from 'react-native'
 import { Container, DataForm, Form, ContentForm, InputTexto, TextForm, LocationButton, InputView } from './styles'
 import { SubmitButton, SubmitText } from '../Login/styles'
-import  React,{ useState,useContext  } from 'react'
+import React, { useState, useContext } from 'react'
 import { AuthContext } from '../../contexts/auth'
+import { showError } from '../../components/Utility/comum'
 
-export default function TypeAccount() {
+
+
+export default function StudentType() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,9 +21,15 @@ export default function TypeAccount() {
 
 
   function handleCreateStudent() {
-    createStudent(name, email, password, lat, lang)    
+
+    if(password != passwordConfim) {
+      showError("As senhas  nao conforem")
+      return;
+    } else {
+      createStudent(name, email, password, lat, lang)
+    }
   }
-  
+
 
 
   return (
@@ -47,7 +56,8 @@ export default function TypeAccount() {
                 outCorrent={false}
                 autoCapitalize="none"
                 value={name}
-                onChange={(text) => setName(text)}
+                returnKeyType="next"
+                onChangeText={(text) => setName(text)}
               />
             </InputView>
 
@@ -59,7 +69,8 @@ export default function TypeAccount() {
                 outCorrent={false}
                 autoCapitalize="none"
                 value={email}
-                onChange={(text) => setEmail(text)}
+                returnKeyType="next"
+                onChangeText={(text) => setEmail(text)}
                 placeholder="Email valido"
               />
             </InputView>
@@ -70,7 +81,8 @@ export default function TypeAccount() {
                 outCorrent={false}
                 autoCapitalize="none"
                 value={password}
-                onChange={(text) => setPassword(text)}
+                returnKeyType="next"
+                onChangeText={(text) => setPassword(text)}
                 placeholder="Digite a senha"
               />
             </InputView>
@@ -81,8 +93,8 @@ export default function TypeAccount() {
                 outCorrent={false}
                 autoCapitalize="none"
                 value={passwordConfim}
-                onChange={(text) => setPasswordConfim(text)}
-
+                returnKeyType="next"
+                onChangeText={(text) => setPasswordConfim(text)}
                 placeholder="Email valido"
               />
             </InputView>

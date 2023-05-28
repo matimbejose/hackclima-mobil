@@ -1,5 +1,7 @@
 import React, { useState, createContext } from "react";
 import api from "../services/api";
+import { Alert } from 'react-native'
+
 
 
 export const AuthContext = createContext({})
@@ -20,12 +22,13 @@ export default function AuthProvider({ children }) {
             lang: lang
         }
 
+        console.log(studentData);
 
         try {
             const response = await api.post('/createuseraccount', studentData)
-            console.log("criado com sucesso")
+            Alert.alert("conta criada com sucesso.")
         } catch (error) {
-            console.log("erro ao criar")
+            Alert.alert('Ocorreu um problema! ')
         }
 
 
@@ -33,12 +36,15 @@ export default function AuthProvider({ children }) {
 
 
 
+
+
     return (
+        // <AuthContext.Provider value={{ user }}>
+        //     { children }
+        // </AuthContext.Provider>
         <AuthContext.Provider value={{ signed: !!user, user, createStudent }}>
             {children}
         </AuthContext.Provider>
     )
-
-
 
 }
