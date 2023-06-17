@@ -4,12 +4,15 @@ import { StatusBar, LogBox} from 'react-native';
 import Routes from './src/routes/routes';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthProvider from './src/contexts/auth';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 LogBox.ignoreAllLogs();
 
 export default function App() {
   return (
 
+    <SafeAreaProvider >
+      
     <NavigationContainer>
       <StatusBar backgroundColor="black"/>
 
@@ -21,6 +24,8 @@ export default function App() {
       </AuthProvider>
 
     </NavigationContainer>
+
+    </SafeAreaProvider>
 
 
   );

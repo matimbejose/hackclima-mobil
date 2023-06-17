@@ -6,6 +6,9 @@ export default function Home() {
    <View>
 
     <Text>vc esta na tela home</Text>
+
+
+    
    </View>
   );
 }

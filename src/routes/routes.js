@@ -6,10 +6,11 @@ import { AuthContext } from "../contexts/auth";
 //esse senhor eh que decide que esta logado entao vou  mandar pra qui etc.
 
 export default function Routes() {
+
 const  { signed } = useContext(AuthContext)
 
     return (
-      signed ?  <AuthRoutes /> : <AuthRoutes />
+      signed ?  <AppRoutes />  : <AuthRoutes />
     )
 
 }

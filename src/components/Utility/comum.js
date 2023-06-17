@@ -2,12 +2,12 @@ import { Alert } from 'react-native'
 
 
 
-function showError() {
-    Alert.alert('Ops! Ocorreu um problema!')
+function showError(msg) {
+    Alert.alert(msg)
 }
 
-function showSuccess() {
-    Alert.alert('Sucesso!')
+function showSuccess(msg) {
+    Alert.alert(msg)
 }
 
-export { server, showError, showSuccess }
+export { showError, showSuccess }

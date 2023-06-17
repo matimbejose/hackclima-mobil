@@ -1,4 +1,4 @@
-import { Platform } from 'react-native'
+import { Platform, ActivityIndicator } from 'react-native'
 import { Container, DataForm, Form, ContentForm, InputTexto, TextForm, LocationButton, InputView } from './styles'
 import { SubmitButton, SubmitText } from '../Login/styles'
 import React, { useState, useContext } from 'react'
@@ -13,21 +13,23 @@ export default function StudentType() {
   const [password, setPassword] = useState('');
   const [passwordConfim, setPasswordConfim] = useState('');
   const [lat, setLat] = useState(0);
-  const [lang, setLang] = useState(0);
+  const [long, setLong] = useState(0);
 
 
-  const { createStudent } = useContext(AuthContext)
+  const { registerStudent, loadingAuth } = useContext(AuthContext)
 
 
 
-  function handleCreateStudent() {
+  function handleRegisterStudent() {
 
-    if(password != passwordConfim) {
-      showError("As senhas  nao conforem")
+    if (password != passwordConfim) {
+      showError("as senhas nao conferem")
       return;
     } else {
-      createStudent(name, email, password, lat, lang)
+      registerStudent(name, email, password, lat, long)
     }
+
+
   }
 
 
@@ -103,8 +105,15 @@ export default function StudentType() {
               <SubmitText>Selecionar localização</SubmitText>
             </LocationButton>
 
-            <SubmitButton onPress={handleCreateStudent}>
-              <SubmitText>Criar conta</SubmitText>
+
+            <SubmitButton onPress={handleRegisterStudent}>
+              {
+                loadingAuth ? (
+                  <ActivityIndicator size={20} color="#FFF" />
+                ) : (
+                  <SubmitText>Criar conta</SubmitText>
+                  )
+              }
             </SubmitButton>
 
 
