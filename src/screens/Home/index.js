@@ -1,14 +1,11 @@
 import React from 'react';
-import { View, Text} from 'react-native';
+import { Container } from './style.js';
+
 
 export default function Home() {
  return (
-   <View>
+  <Container>
 
-    <Text>vc esta na tela home</Text>
-
-
-    
-   </View>
+  </Container>
   );
 }

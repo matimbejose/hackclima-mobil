@@ -1,25 +1,43 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { Entypo,Feather  } from '@expo/vector-icons'; 
+
 import Home from '../screens/Home';
-import AboutCompany from '../screens/AboutCompany';
+import Map from '../components/Map';
 
 
+
+const { Navigator, Screen} =  createBottomTabNavigator();
 
 export default function AppRoutes() {
 
-
-  const Tab = createMaterialBottomTabNavigator();
-
-
   return (
 
-    <View>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="AboutCompany" component={AboutCompany} />
-      </Tab.Navigator>
-    </View>
+      <Navigator>
+        <Screen 
+        name="Inicio" 
+        component={Home} 
+        options={{
+          tabBarIcon: () => {
+            return <Entypo name="home" size={30} color="black" />
+          },
+          headerShow:  false
+        }}
+        />
+
+        <Screen 
+        name="Procurar" 
+        component={Map}
+        options={{
+          tabBarIcon: () => {
+            return <Feather name="map" size={30} color="black" />
+          },
+          headerShow:  false
+        }}
+        />
+
+      </Navigator>
 
 
 

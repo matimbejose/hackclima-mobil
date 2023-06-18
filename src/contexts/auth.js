@@ -8,8 +8,7 @@ export const AuthContext = createContext({})
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState({
-    name: "matimbe",
-    lat: "20"
+    name: "matimbe jose"
   })
   const [loading, setLoading] = useState(true)
   const [loadingAuth, setLoadingAuth] = useState(false);
