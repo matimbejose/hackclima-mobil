@@ -9,8 +9,6 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",
     "@react-navigation/bottom-tabs": "^6.5.7",
-    "@react-navigation/drawer": "5.6.3",
-    "@react-navigation/material-bottom-tabs": "^5.x",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/stack": "5.2.18",
     "axios": "^1.4.0",

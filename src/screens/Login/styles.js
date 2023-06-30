@@ -46,6 +46,7 @@ export const CreateAccountButton = styled.TouchableOpacity`
 
 export const SubmitText = styled.Text`
 color: #FFF;
+font-size: 18px;
 `
 export const CreateNewAccount = styled.Text`
 color: #FF0000;
