@@ -1,9 +1,10 @@
 import { Platform, ActivityIndicator } from 'react-native'
-import { Container, DataForm, Form, ContentForm, InputTexto, TextForm, LocationButton, InputView } from './styles'
+import { Container, DataForm, Form, ContentForm, InputTexto, TextForm, LocationButton, InputView , SelectImageView, SubmitImageText,SelectImageButton} from './styles'
 import { SubmitButton, SubmitText } from '../Login/styles'
 import React, { useState, useContext } from 'react'
 import { AuthContext } from '../../contexts/auth'
 import { showError } from '../../components/Utility/comum'
+import { AntDesign } from '@expo/vector-icons'; 
 
 
 
@@ -12,6 +13,7 @@ export default function StudentType() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfim, setPasswordConfim] = useState('');
+  const [numberPhone, setNumberPhone] = useState('');
   const [lat, setLat] = useState(0);
   const [long, setLong] = useState(0);
 
@@ -50,6 +52,13 @@ export default function StudentType() {
 
           <ContentForm>
 
+            <SelectImageButton>
+            <SelectImageView>
+            <AntDesign name="user" size={70} color="black" />
+            <SubmitImageText>Selecionar  Imagem</SubmitImageText>
+            </SelectImageView>
+            </SelectImageButton>
+
 
             <InputView>
               <TextForm>Nome completo</TextForm>
@@ -76,6 +85,19 @@ export default function StudentType() {
                 placeholder="Email valido"
               />
             </InputView>
+
+            <InputView>
+
+          <TextForm>Número de celular</TextForm>
+          <InputTexto
+            outCorrent={false}
+            autoCapitalize="none"
+            value={email}
+            returnKeyType="next"
+            onChangeText={(text) => setEmail(text)}
+            placeholder="Número de telefone valido"
+          />
+          </InputView>
 
             <InputView>
               <TextForm>Senha</TextForm>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Platform } from 'react-native'
-import { Container, ImageLogo, InputTexto, SubmitButton, SubmitText, CreateAccoutView, CreateAccountButton, CreateNewAccount, Background, Form, TextForm} from './styles'
+import { Container, ImageLogo, InputTexto, SubmitButton, SubmitText, CreateAccoutView, CreateAccountButton, CreateNewAccount, Background, Form, TextForm,TextNewAccount} from './styles'
 import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../../contexts/auth'
 
@@ -60,7 +60,7 @@ export default function Login() {
                     </SubmitButton>
 
                 <CreateAccoutView>
-                    <SubmitText> Nao possui uma conta ?</SubmitText>
+                    <TextNewAccount> Nao possui uma conta ?</TextNewAccount>
 
                     <CreateAccountButton onPress={() => navigation.navigate('TypeAccount')}>
                         <CreateNewAccount>  criar uma conta</CreateNewAccount>

@@ -25,6 +25,7 @@ export const StudentDetails = styled.View`
 export const StudentViwDetailsText = styled.View`
 flex-direction: row;
 align-items: center;
+padding: 10px;
 `
 
 
@@ -39,6 +40,6 @@ font-size: 18px;
 
 
 export const LougoutView = styled.View`
-
-
+margin-top: 240px;
+flex-shrink: 0;
 `

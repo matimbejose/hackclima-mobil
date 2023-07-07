@@ -45,4 +45,16 @@ width: 350px;
 border-radius: 50px;
 `;
 
+export const SelectImageView = styled.View`
+margin: 10px;
+align-items: center;
+`;
+
+export const SubmitImageText = styled.Text`
+margin-top: 10px;
+`;
+
+export const SelectImageButton = styled.TouchableOpacity`
+margin-top: 10px;
+`;
 

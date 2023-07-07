@@ -68,3 +68,6 @@ export const TextForm = styled.Text`
 color: #FFF;
 margin: 5px;
 `
+export const TextNewAccount = styled.Text`
+color: #FFF;
+`

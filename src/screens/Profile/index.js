@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container,StudentImageView, SelectImageText, TextDetails,StudentDetails,StudentViwDetailsText,ProfileImageView, LougoutView} from './style';
 import { SubmitButton, SubmitText} from '../Login/styles'
 import { AntDesign,MaterialCommunityIcons } from '@expo/vector-icons'; 
 
-
-
 export default function Profile() {
+
+  function handleLogout() {
+    console.log("vc tentou se deslogar")
+  }
+
+
  return (
   <Container>
 
@@ -23,7 +27,7 @@ export default function Profile() {
 
     <StudentViwDetailsText>
     <MaterialCommunityIcons name="email-outline" size={35} color="black" />    
-    <TextDetails> emaildoestudante@gmail.com</TextDetails>
+    <TextDetails> Emaildoestudante@gmail.com</TextDetails>
     </StudentViwDetailsText>
 
     <StudentViwDetailsText>
@@ -35,10 +39,9 @@ export default function Profile() {
 
 
 <LougoutView>
-    <SubmitButton>
+    <SubmitButton onPress={ handleLogout }> 
       <SubmitText>Deslogar </SubmitText>
     </SubmitButton>
-
 </LougoutView>
 
   </Container>

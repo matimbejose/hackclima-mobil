@@ -2,11 +2,10 @@ import {
   Platform,
 } from 'react-native'
 
-
-
-import { Container, DataForm, Form, ContentForm, InputTexto, TextForm, LocationButton, InputView, ImageView, ImageSelectButton, TextAreaView, TextAreaContent } from './styles'
+import { Container, DataForm, Form, ContentForm, InputTexto, TextForm, LocationButton, InputView, TextAreaView, TextAreaContent } from './styles'
 import { SubmitButton, SubmitText } from '../Login/styles'
 import { Ionicons } from '@expo/vector-icons';
+import { SelectImageButton,SelectImageView,SubmitImageText } from '../StudentType/styles'
 
 export default function CompanyType() {
 
@@ -26,54 +25,48 @@ export default function CompanyType() {
 
           <ContentForm>
 
-            <ImageView>
+            <SelectImageButton>
+            <SelectImageView>
+            <Ionicons name="business" size={70} color="black" />            
+            <SubmitImageText>Selecionar  Imagem</SubmitImageText>
+            </SelectImageView>
+            </SelectImageButton>
 
 
-              <ImageSelectButton>
-                <Ionicons name="business" size={50} color="black" />
-              </ImageSelectButton>
-
-              <TextForm>Selecionar imagem</TextForm>
-            </ImageView>
-
-
-
-            <InputView>
+       <InputView>
               <TextForm>Nome da instituição</TextForm>
               <InputTexto
                 placeholder="Nome completo"
               />
             </InputView>
-
-
             <InputView>
 
               <TextForm>Email valido</TextForm>
               <InputTexto
                 placeholder="Email valido"
               />
-            </InputView>
+            </InputView> 
 
-            <InputView>
+          <InputView>
               <TextForm>Senha</TextForm>
               <InputTexto
                 placeholder="Email valido"
               />
             </InputView>
 
-            <InputView>
+       <InputView>
               <TextForm>Confirmar senha</TextForm>
               <InputTexto
                 placeholder="Email valido"
               />
-            </InputView>
+            </InputView> 
 
-            <InputView>
+       <InputView>
               <TextForm>Nome do responsável</TextForm>
               <InputTexto
                 placeholder="Nome do responsável"
               />
-            </InputView>
+            </InputView> 
 
 
             <InputView>
@@ -90,22 +83,7 @@ export default function CompanyType() {
 
               </TextAreaView>
             </InputView>
-
-
-            {/* <InputView>
-            <TextForm>Confirmar senha</TextForm>
-            <InputTexto
-              placeholder="Email valido"
-            />
-            </InputView>
-
-            <InputView>
-            <TextForm>Confirmar senha</TextForm>
-            <InputTexto
-              placeholder="Email valido"
-            />
-            </InputView> */}
-
+            
             <LocationButton>
               <SubmitText>Selecionar localização</SubmitText>
             </LocationButton>
@@ -126,4 +104,3 @@ export default function CompanyType() {
     </Container>
   )
 }
-

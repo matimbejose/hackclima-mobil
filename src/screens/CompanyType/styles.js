@@ -6,21 +6,6 @@ flex:1;
 background-color: #FFF;
 `
 
-export const ImageView = styled.View`
-justify-content: center;
-align-items: center;
-margin-bottom: 10px;
-`
-
-export const ImageSelectButton = styled.TouchableOpacity`
-justify-content: center;
-align-items: center;
-border-radius: 20px;
-padding: 15px;
-background-color: #D9D9D9;
-margin-top: 10px;
-`
-
 
 export const DataForm = styled.KeyboardAvoidingView`
 flex: 1;
@@ -40,9 +25,6 @@ margin: 5px;
 `
 
 
-export const InputView = styled.View`
-justify-content: flex-start;
-`
 
 export const InputTexto = styled.TextInput`
 background-color: #F9CDCD;
@@ -74,3 +56,8 @@ justify-content: flex-start;
 `
 
 
+
+
+export const InputView = styled.View`
+justify-content: flex-start;
+`
