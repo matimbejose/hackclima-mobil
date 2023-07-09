@@ -1,8 +1,20 @@
 import styled from "styled-components/native";
 
+export const EditButton = styled.TouchableOpacity`
+align-items:  flex-end;
+margin: 10px;
+
+
+`
+
+
+export const Form = styled.View`
+flex: 1;
+background-color: #FFF;
+`
+
 
 export const Container = styled.View`
-flex: 1;
 background-color: #FFF;
 align-items: center;;
 
@@ -40,6 +52,5 @@ font-size: 18px;
 
 
 export const LougoutView = styled.View`
-margin-top: 240px;
-flex-shrink: 0;
+align-items: flex-end;
 `
