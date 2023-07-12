@@ -6,7 +6,8 @@ import { Entypo, Feather,AntDesign } from '@expo/vector-icons';
 import Home from '../screens/Home';
 import Map from '../components/Map';
 import Profile from '../screens/Profile'
-
+import ProfileEdit from '../screens/ProfileEdit'
+import AboutCompany from "../screens/AboutCompany"
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -47,6 +48,20 @@ export default function AppRoutes() {
           },
         }}
       />
+
+    <Screen
+        name="ProfileEdit"
+        component={ProfileEdit}
+        options={{ tabBarButton: () => null }}
+      />
+
+      
+    <Screen
+        name="AboutCompany"
+        component={AboutCompany}
+        options={{ tabBarButton: () => null }}
+      />
+
 
     </Navigator>
 

@@ -11,7 +11,7 @@ export default function AuthProvider({ children }) {
   const [user, setUser] = useState({
     name: "matimbe  jose",
     email: "matimbejose@gmail.com",
-    password: "1212323"
+    phoneNumber: "+258 847787067"
   })
   const [loading, setLoading] = useState(true)
   const [loadingAuth, setLoadingAuth] = useState(false);

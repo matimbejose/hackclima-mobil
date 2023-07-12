@@ -129,13 +129,8 @@ export default function ProfileEdit() {
 
 
             <SubmitButton onPress={handleRegisterStudent}>
-              {
-                loadingAuth ? (
-                  <ActivityIndicator size={20} color="#FFF" />
-                ) : (
-                  <SubmitText>Criar conta</SubmitText>
-                  )
-              }
+              
+                  <SubmitText>Atualizar dados</SubmitText>
             </SubmitButton>
 
 
