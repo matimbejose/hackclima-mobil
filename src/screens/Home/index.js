@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { ActivityIndicator, View} from 'react-native'
 import { Container,ListaItem } from './style.js';
 import HomeItem from '../../components/HomeItem/'
-import AboutCompany from '../../screens/AboutCompany'
 import axios from 'axios';
 
 export default function Home() {
@@ -26,9 +25,6 @@ export default function Home() {
 
 
 
-  function handleaboutCompany(data) {
-    <AboutCompany  />
-  }
 
 
     if(loading) {
@@ -51,7 +47,7 @@ export default function Home() {
         data={companys}
         numColumns={2}       
         keyExtractor={ item =>  String(item.id)}
-        renderItem={({ item }) => (<HomeItem data={item}  aboutCompany={ handleaboutCompany } />)}
+        renderItem={({ item }) => (<HomeItem data={item} />)}
         />
 
         </Container>

@@ -9,9 +9,9 @@ export const AuthContext = createContext({})
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState({
-    name: "matimbe  jose",
-    email: "matimbejose@gmail.com",
-    phoneNumber: "+258 847787067"
+    name: 'matimbe jose',
+    email: 'matimbejose@gmail.com',
+    phoneNumber: '+258 847787067'
   })
   const [loading, setLoading] = useState(true)
   const [loadingAuth, setLoadingAuth] = useState(false);
