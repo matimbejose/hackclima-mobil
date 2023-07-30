@@ -1,18 +1,14 @@
 import React, { useContext } from 'react';
-import { Container,StudentImageView, SelectImageText, TextDetails,StudentDetails,StudentViwDetailsText,ProfileImageView, LougoutView, Form,EditButton} from './style';
+import { Container,StudentImageView, SelectImageText, TextDetails,StudentDetails,StudentViwDetailsText,ProfileImageView, LougoutView, Form,EditButton,ImageProfile} from './style';
 import { SubmitButton, SubmitText} from '../Login/styles'
-import { AntDesign,MaterialCommunityIcons, Feather} from '@expo/vector-icons'; 
+import {MaterialCommunityIcons, Feather} from '@expo/vector-icons'; 
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { AuthContext } from '../../contexts/auth';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Profile() {
-const { user } = useContext(AuthContext);
+const { user, logoutUser} = useContext(AuthContext);
 const navigation = useNavigation();
-
-  function handleLogout() {
-    console.log("vc tentou se deslogar")
-  }
 
  return (
 
@@ -26,7 +22,11 @@ const navigation = useNavigation();
 
     <StudentImageView>
       <ProfileImageView>
-    <AntDesign name="user" size={75} color="black" />
+    <ImageProfile
+      source={{ 
+        uri: `http://10.0.2.2:8989/${user.image}`
+      }}
+    />
       </ProfileImageView>
     <SelectImageText>{ user.name}</SelectImageText>
     <SelectImageText>Localizacao do estudante</SelectImageText>
@@ -42,14 +42,14 @@ const navigation = useNavigation();
     
     <StudentViwDetailsText>
     <Feather name="phone" size={35} color="black" />
-        <TextDetails> {user.phoneNumber }</TextDetails>
+        <TextDetails> {user.number_phone }</TextDetails>
     </StudentViwDetailsText>
 
     </StudentDetails>
 
 
 <LougoutView>
-    <SubmitButton onPress={ handleLogout }> 
+    <SubmitButton onPress={ logoutUser }> 
       <SubmitText>Deslogar </SubmitText>
     </SubmitButton>
 </LougoutView>

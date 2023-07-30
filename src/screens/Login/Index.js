@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Platform } from 'react-native'
+import { ActivityIndicator, Platform } from 'react-native'
 import { Container, ImageLogo, InputTexto, SubmitButton, SubmitText, CreateAccoutView, CreateAccountButton, CreateNewAccount, Background, Form, TextForm,TextNewAccount} from './styles'
 import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../../contexts/auth'
@@ -11,11 +11,11 @@ export default function Login() {
     const [ password, setPassword] = useState();
 
 
-    const { loginStudent, loadingAuth } = useContext(AuthContext)
+    const { loginUser, loadingAuth } = useContext(AuthContext)
 
 
     function handleLogin() {
-        loginStudent(email, password);
+        loginUser(email, password);
     }
 
 
@@ -56,7 +56,15 @@ export default function Login() {
                 </Form>
 
                     <SubmitButton onPress={ handleLogin } >
-                        <SubmitText>Acessar</SubmitText>
+
+                        {
+                            loadingAuth ? (
+                                <ActivityIndicator size={20} color="#FFF" />
+                            ) : (
+                                <SubmitText>Acessar</SubmitText>
+                            )
+                        }
+                      
                     </SubmitButton>
 
                 <CreateAccoutView>

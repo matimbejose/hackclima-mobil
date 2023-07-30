@@ -16,7 +16,7 @@ export default function Routes() {
 
   if (signed) {
 
-   if(user.type == 'student') {
+   if(user.type == 'person') {
     renderedRoutes = <AppRoutes />;
 
    } else {

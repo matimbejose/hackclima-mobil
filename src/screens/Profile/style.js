@@ -54,3 +54,12 @@ font-size: 18px;
 export const LougoutView = styled.View`
 align-items: flex-end;
 `
+
+
+export const ImageProfile = styled.Image.attrs({
+    objectFit: 'cover',
+})`
+border-radius: 20px;
+width:80px;
+height: 80px;
+`

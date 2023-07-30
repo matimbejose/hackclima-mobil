@@ -5,6 +5,7 @@ import { Container,ImageCompany,DataCompeny,NameResp,WelcomText,ButtonsView,Butt
 import { MaterialIcons,AntDesign} from '@expo/vector-icons'; 
 import { useNavigation } from '@react-navigation/native';
 import Graphic from '../../components/Graphic';
+import { SubmitButton, SubmitText } from '../Login/styles';
 
 
 
@@ -54,6 +55,10 @@ export default function HomeCompany() {
           <TextButton>Pagamentos</TextButton>
           </ButtonController>
           </ButtonContainerView>
+
+          <SubmitButton>
+            <SubmitText>Sair</SubmitText>
+          </SubmitButton>
  
 
         </ButtonsView>

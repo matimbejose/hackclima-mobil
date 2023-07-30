@@ -18,17 +18,17 @@ export default function StudentType() {
   const [long, setLong] = useState(0);
 
 
-  const { registerStudent, loadingAuth } = useContext(AuthContext)
+  const { registerUser, loadingAuth } = useContext(AuthContext)
 
 
 
-  function handleRegisterStudent() {
+  function handleRegisterUser() {
 
     if (password != passwordConfim) {
       showError("as senhas nao conferem")
       return;
     } else {
-      registerStudent(name, email, password, lat, long)
+      registerUser(name, email, password, lat, long)
     }
 
 
@@ -128,7 +128,7 @@ export default function StudentType() {
             </LocationButton>
 
 
-            <SubmitButton onPress={handleRegisterStudent}>
+            <SubmitButton onPress={handleRegisterUser}>
               {
                 loadingAuth ? (
                   <ActivityIndicator size={20} color="#FFF" />
