@@ -21,11 +21,11 @@ export default function TypeAccount() {
 
 
                 <SubmitButton onPress={() => navigation.navigate("StudentType")}>
-                    <SubmitText>Estudante</SubmitText>
+                    <SubmitText>Utente</SubmitText>
                 </SubmitButton>
 
                 <SubmitButton onPress={() => navigation.navigate("CompanyType")}>
-                    <SubmitText>Instituição</SubmitText>
+                    <SubmitText>Unidade sanitária</SubmitText>
                 </SubmitButton>
 
             </Container>

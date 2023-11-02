@@ -25,25 +25,25 @@ export default function CompanyType() {
 
           <ContentForm>
 
-            <SelectImageButton>
+            {/* <SelectImageButton>
             <SelectImageView>
             <Ionicons name="business" size={70} color="black" />            
             <SubmitImageText>Selecionar  Imagem</SubmitImageText>
             </SelectImageView>
-            </SelectImageButton>
+            </SelectImageButton> */}
 
 
        <InputView>
-              <TextForm>Nome da instituição</TextForm>
+              <TextForm>Nome unidade sanitária</TextForm>
               <InputTexto
-                placeholder="Nome completo"
+                placeholder="Nome unidade sanitária"
               />
             </InputView>
             <InputView>
 
-              <TextForm>Email valido</TextForm>
+              <TextForm>Numero de identificacao</TextForm>
               <InputTexto
-                placeholder="Email valido"
+                placeholder="Numero de identificacao"
               />
             </InputView> 
 
@@ -68,7 +68,7 @@ export default function CompanyType() {
               />
             </InputView> 
 
-
+{/* 
             <InputView>
               <TextForm>Catalogo</TextForm>
               <TextAreaView>
@@ -83,7 +83,7 @@ export default function CompanyType() {
 
               </TextAreaView>
             </InputView>
-            
+             */}
             <LocationButton>
               <SubmitText>Selecionar localização</SubmitText>
             </LocationButton>

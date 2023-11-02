@@ -34,7 +34,7 @@ export default function Login() {
 
                 <Form>
 
-                    <TextForm>Email</TextForm>
+                    <TextForm>Numero de telefone</TextForm>
                     <InputTexto
                         placeholder='Digite seu email '
                         outCorrent={false}

@@ -51,13 +51,13 @@ export default function StudentType() {
         >
 
           <ContentForm>
-
+{/* 
             <SelectImageButton>
             <SelectImageView>
             <AntDesign name="user" size={70} color="black" />
             <SubmitImageText>Selecionar  Imagem</SubmitImageText>
             </SelectImageView>
-            </SelectImageButton>
+            </SelectImageButton> */}
 
 
             <InputView>
@@ -73,7 +73,7 @@ export default function StudentType() {
             </InputView>
 
 
-            <InputView>
+            {/* <InputView>
 
               <TextForm>Email valido</TextForm>
               <InputTexto
@@ -84,7 +84,7 @@ export default function StudentType() {
                 onChangeText={(text) => setEmail(text)}
                 placeholder="Email valido"
               />
-            </InputView>
+            </InputView> */}
 
             <InputView>
 
